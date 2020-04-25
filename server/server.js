@@ -17,8 +17,9 @@ app.use(bodyParser.json());
 
 
 
-//rutas
-app.use(require('./routes/usuarios'));
+//Ruta General
+app.use(require('./routes/index'));
+
 
 //Conexion a la bd mongo
 
