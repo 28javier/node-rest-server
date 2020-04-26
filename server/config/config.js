@@ -18,7 +18,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 //24 hora
 //30 dias
 
-process.env.CADUCIDA_TOKEN = 60 * 60 * 24 * 30;
+process.env.CADUCIDA_TOKEN = '80h';
 
 
 

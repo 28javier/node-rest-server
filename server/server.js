@@ -4,6 +4,7 @@ require('./config/config.js');
 
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path')
 
 
 
@@ -14,6 +15,10 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
+
+//habiltar la carpeta public para q se vea el login in de google
+app.use(express.static(path.resolve(__dirname, '../public')));
+// console.log(path.resolve(__dirname, '../public'));
 
 
 
