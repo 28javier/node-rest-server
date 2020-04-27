@@ -44,10 +44,35 @@ let verificaAdmin_Role = (req, res, next) => {
     }
 };
 
+//============================
+//    VERIFICAR TOKEN de Imagenes por la URL
+//============================
+
+let verificaTokenImg = (req, res, next) => {
+
+    let token = req.query.token;
+
+    jwt.verify(token, process.env.SEMILLA, (err, decoded) => {
+
+        if (err) {
+            return res.status(401).json({
+                ok: false,
+                err: {
+                    massage: 'Error en el token'
+                }
+            });
+
+        }
+
+        req.usuario = decoded.usuario;
+        next();
+    });
+}
 
 
 module.exports = {
     verificaToken,
-    verificaAdmin_Role
+    verificaAdmin_Role,
+    verificaTokenImg
 
 };

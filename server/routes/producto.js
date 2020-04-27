@@ -226,19 +226,4 @@ app.delete('/producto/:id', verificaToken, (req, res) => {
 
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = app;
